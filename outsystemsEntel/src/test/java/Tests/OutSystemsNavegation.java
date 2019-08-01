@@ -9,24 +9,20 @@ import Tests.AbstractBaseTests.ConnectAppium;
 public class OutSystemsNavegation extends ConnectAppium {
     @Test
     public void testNavegation() throws InterruptedException {
-    	Thread.sleep(5000);
-    	driver.get("http://entel-dev.outsystemsenterprise.com/CL_Web_Empresas_DeviceCatalog/");
-    	Thread.sleep(5000);
-    	driver.findElement(By.id("CL_Web_Empresas_Publico_Layout_wt9_block_wtMainContent_CL_Web_Empresas_DeviceCatalog_CW_wt12_block_wtDeviceList_ctl00_wt5_CL_Web_Empresas_Publico_Patterns_wt28_block_wtButton_wtIWantBuyButton")).click();
-    	Thread.sleep(1000);
-    	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='$3.333'])[1]/following::span[1]")).click();
-    	Thread.sleep(1000);
-    	driver.switchTo().frame(0);
-    	driver.findElement(By.id("Nombre")).click();
-        driver.findElement(By.id("Nombre")).clear();
-        driver.findElement(By.id("Nombre")).sendKeys("Sergio");
-        driver.findElement(By.id("Rut")).clear();
-        driver.findElement(By.id("Rut")).sendKeys("sergio.vasquez.pincheira@gmail.com");
-        driver.findElement(By.id("Movil")).clear();
-        driver.findElement(By.id("Movil")).sendKeys("972006179");
-        driver.findElement(By.id("empresas_c2c_movil_tellamamos")).click();
-        driver.switchTo().parentFrame();
-        Thread.sleep(5000);
+        
+    		Thread.sleep(5000);
+			driver.get("https://entel-dev.outsystemsenterprise.com/CL_Web_Cautivo_SIM_Prepago_CW/WelcomeActivation.aspx?");
+	    	Thread.sleep(4000);
+	    	driver.findElement(By.xpath("//div[@class='bnt-active-chip']//div[contains(text(),'Activa tu chip con Prepago')]")).click();
+	    	Thread.sleep(1000);
+	    	driver.findElement(By.xpath("//div[@class='input-component']//div//input[@placeholder='12.345.678-9']")).sendKeys("19.765.783-9");
+	    	Thread.sleep(1000);
+	    	driver.findElement(By.xpath("//div[@class='btn first']//input[@value='Continuar']")).click();
+	    	Thread.sleep(5000);
+	    	driver.findElement(By.cssSelector("div.number-favorite div:nth-child(5) div div.checkbox")).click();
+	    	driver.findElement(By.xpath("//div[@class='number-favorite']//div//input[@type='text']")).sendKeys("987654321");
+	    	driver.findElement(By.xpath("//div[@class='number-favorite']//div//input[@value='Continuar']")).click();
+	    	Thread.sleep(5000);
         
     }
 }
