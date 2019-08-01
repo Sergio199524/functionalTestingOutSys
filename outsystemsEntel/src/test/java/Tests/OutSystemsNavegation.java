@@ -11,7 +11,7 @@ public class OutSystemsNavegation extends ConnectAppium {
     public void testNavegation() throws InterruptedException {
         
     		Thread.sleep(5000);
-			driver.get("https://entel-dev.outsystemsenterprise.com/CL_Web_Cautivo_SIM_Prepago_CW/WelcomeActivation.aspx?");
+		driver.get("https://entel-dev.outsystemsenterprise.com/CL_Web_Cautivo_SIM_Prepago_CW/WelcomeActivation.aspx?");
 	    	Thread.sleep(4000);
 	    	driver.findElement(By.xpath("//div[@class='bnt-active-chip']//div[contains(text(),'Activa tu chip con Prepago')]")).click();
 	    	Thread.sleep(1000);
